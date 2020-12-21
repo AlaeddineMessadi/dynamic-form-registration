@@ -1,25 +1,30 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.scss";
+import "./styles/App.scss";
 
 function App() {
+  const [email, setEmail]: [
+    string,
+    (videoName: string) => void
+  ] = React.useState<string>("");
+  /**
+   * Form Input videoName ChangeHandler
+   */
+  const emailChangeHandler = (event: React.ChangeEvent<{ value: unknown }>) => {
+    const email: string = event.target.value as string;
+    setEmail(email);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <form className="container">
+        <fieldset className="form-fieldset">
+          <legend>
+            <h1>Registration Form</h1>
+          </legend>
+          <h2 className="subtitle">Please enter your Name</h2>
+        </fieldset>
+      </form>
+    </main>
   );
 }
 
