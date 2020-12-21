@@ -1,0 +1,15 @@
+@import "../../styles/variables.scss";
+@import "../../styles/variables.scss";
+
+.buttons-control {
+  display: flex;
+  justify-content: space-between;
+  margin-top: $ruler * 2;
+
+  @media (max-width: 329px) {
+    flex-flow: column;
+    > * {
+      margin-bottom: $ruler *2;
+    }
+  }
+}

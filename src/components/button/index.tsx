@@ -6,7 +6,7 @@ interface IPropsButton {
   text?: string;
 }
 
-export const ButtonElm: React.FC<IPropsButton> = ({
+export const Button: React.FC<IPropsButton> = ({
   text,
   onClick: handleOnClickChange,
 }) => {
