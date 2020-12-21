@@ -3,7 +3,7 @@ import "./App.scss";
 
 import { FORM_SCHEMA } from "../common/form-schema";
 
-import { ButtonsControl, Slider } from "../components";
+import { ButtonsControl, Slider, Stepper } from "../components";
 
 function App() {
   const [step, setStep] = React.useState(0);
@@ -39,6 +39,9 @@ function App() {
           <legend>
             <h1>Registration Form</h1>
           </legend>
+          <div>
+            <Stepper steps={steps} step={step} />
+          </div>
           <h2 className="subtitle">Please enter your Name</h2>
           <div>
             <Slider name="slider" sliders={steps} step={step} />

@@ -4,6 +4,7 @@ import { TextInput } from "./input-text";
 import { RadioButton } from "./radio-button";
 import { RadioButtonsGroup } from "./radio-group";
 import { Slider } from "./slider";
+import { Stepper } from "./stepper";
 
 export {
   Button,
@@ -12,4 +13,5 @@ export {
   RadioButton,
   RadioButtonsGroup,
   Slider,
+  Stepper,
 };

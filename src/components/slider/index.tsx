@@ -18,7 +18,7 @@ export const Slider: React.FC<ISliderProps> = ({
   step,
 }) => {
   const getFormElement = (item: ItemOption) => {
-    const { name, type, label, required } = item;
+    const { name, type, label, required, options = [] } = item;
 
     if (type === "text" || type === "email") {
       return (
@@ -31,7 +31,7 @@ export const Slider: React.FC<ISliderProps> = ({
         <RadioButtonsGroup
           name={name}
           label={label}
-          options={item.options || []}
+          options={options}
           required={required}
         />
       );
