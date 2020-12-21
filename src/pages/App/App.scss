@@ -22,3 +22,72 @@ p {
   color: $color-shadow;
   text-shadow: 1px 1px 1px $color-white;
 }
+
+button,
+input {
+  border: 0;
+  outline: 0;
+  font-size: $ruler;
+  border-radius: $ruler*20;
+  padding: $ruler;
+  background-color: $color-bg;
+  text-shadow: 1px 1px 0 $color-white;
+}
+
+label {
+  display: block;
+  margin-bottom: $ruler*1.5;
+  width: 100%;
+}
+
+
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  label {
+    margin: 0;
+    flex: 1;
+  }
+}
+
+.form-fieldset {
+  padding: $ruler $ruler*2;
+  border: 1.5px solid;
+
+  legend {
+    text-align: center;
+    padding: 0 $ruler;
+    font-weight: bold;
+  }
+}
+
+
+form {
+  padding: $ruler;
+  margin: 0 auto;
+}
+
+.segment {
+  padding: $ruler 0;
+  text-align: center;
+}
+
+
+.container {
+  max-width: $ruler*30;
+
+  padding-right: 15px;
+  padding-left: 15px;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
