@@ -3,14 +3,13 @@ import "./App.scss";
 
 import { FORM_SCHEMA } from "../common/form-schema";
 
-import { ButtonsControl, TextInput, Slider } from "../components";
-import { sep } from "path";
+import { ButtonsControl, Slider } from "../components";
 
 function App() {
   const [step, setStep] = React.useState(0);
   const [formState, setFormState] = React.useState({});
 
-  const steps = FORM_SCHEMA.steps;
+  const { steps } = FORM_SCHEMA;
   const lastStepIndex = steps.length - 1;
   const isLastStep = lastStepIndex === step;
 
@@ -18,7 +17,7 @@ function App() {
   const onPrevClick = React.useCallback(
     (event) => {
       event.preventDefault();
-      setStep(() => Math.max(step - 1, 0));
+      setStep(step - 1);
     },
     [step, setStep]
   );
@@ -28,16 +27,10 @@ function App() {
     (event) => {
       event.preventDefault();
 
-      setStep(() => Math.max(step + 1, 0));
+      setStep(() => (isLastStep ? 0 : step + 1));
     },
     [step, setStep]
   );
-
-  const sliders = [
-    { id: 1, content: <p>This is one</p> },
-    { id: 2, content: <p>This is two</p> },
-    { id: 3, content: <p>This is three</p> },
-  ];
 
   return (
     <main>
@@ -48,7 +41,7 @@ function App() {
           </legend>
           <h2 className="subtitle">Please enter your Name</h2>
           <div>
-            <Slider name="slider" sliders={sliders} step={step} />
+            <Slider name="slider" sliders={steps} step={step} />
           </div>
           <ButtonsControl
             currentStep={step}

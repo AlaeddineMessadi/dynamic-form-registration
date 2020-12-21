@@ -2,11 +2,7 @@ import React from "react";
 import "./style.scss";
 
 import { RadioButton } from "../index";
-
-interface RadioOption {
-  value: string;
-  label: string;
-}
+import { RadioOption } from "../../common/types";
 
 interface IRadioProps {
   changeHandler?: React.ChangeEvent;

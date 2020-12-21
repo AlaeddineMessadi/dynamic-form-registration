@@ -12,7 +12,6 @@ export const Button: React.FC<IPropsButton> = ({
   disabled,
   onClick: handleOnClickChange,
 }) => {
-  console.log(disabled);
   return (
     <button onClick={handleOnClickChange} disabled={disabled}>
       {text}
