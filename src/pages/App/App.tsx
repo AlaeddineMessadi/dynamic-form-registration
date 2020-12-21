@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 
-import { ButtonsControl } from "../../components";
+import { ButtonsControl, TextInput } from "../../components";
 
 function App() {
   const [email, setEmail]: [
@@ -24,7 +24,9 @@ function App() {
             <h1>Registration Form</h1>
           </legend>
           <h2 className="subtitle">Please enter your Name</h2>
-
+          <div>
+            <TextInput label="Full Name" name="name" />
+          </div>
           <ButtonsControl />
         </fieldset>
       </form>

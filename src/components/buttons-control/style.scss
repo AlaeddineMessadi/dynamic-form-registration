@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: $ruler * 2;
+  margin-bottom: $ruler;
 
   @media (max-width: 329px) {
     flex-flow: column;
