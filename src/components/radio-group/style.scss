@@ -1,0 +1,20 @@
+@import "../../styles/variables.scss";
+
+
+.radio-group {
+  padding: 48px 64px;
+  border-radius: 16px;
+  background: #ecf0f3;
+  box-shadow:
+    4px 4px 4px 0px #d1d9e6 inset,
+    -4px -4px 4px 0px #ffffff inset;
+}
+
+.wrapper {
+  margin: 8px 0;
+}
+
+.error {
+  color: $color-red;
+  margin: $ruler/2 $ruler*1.5;
+}
