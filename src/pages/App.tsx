@@ -4,6 +4,7 @@ import "./App.scss";
 import { FORM_SCHEMA } from "../common/form-schema";
 
 import { ButtonsControl, TextInput, Slider } from "../components";
+import { sep } from "path";
 
 function App() {
   const [step, setStep] = React.useState(0);
@@ -22,6 +23,22 @@ function App() {
     [step, setStep]
   );
 
+  // on step submit
+  const onStepSubmit = React.useCallback(
+    (event) => {
+      event.preventDefault();
+
+      setStep(() => Math.max(step + 1, 0));
+    },
+    [step, setStep]
+  );
+
+  const sliders = [
+    { id: 1, content: <p>This is one</p> },
+    { id: 2, content: <p>This is two</p> },
+    { id: 3, content: <p>This is three</p> },
+  ];
+
   return (
     <main>
       <form className="container">
@@ -31,9 +48,13 @@ function App() {
           </legend>
           <h2 className="subtitle">Please enter your Name</h2>
           <div>
-            <Slider />
+            <Slider name="slider" sliders={sliders} step={step} />
           </div>
-          <ButtonsControl />
+          <ButtonsControl
+            currentStep={step}
+            onClickNext={onStepSubmit}
+            onClickPrevious={onPrevClick}
+          />
         </fieldset>
       </form>
     </main>

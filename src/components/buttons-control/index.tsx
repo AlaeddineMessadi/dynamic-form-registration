@@ -4,27 +4,24 @@ import "./style.scss";
 import { Button } from "../index";
 
 interface IPropsButtonsControl {
-  children?: JSX.Element | JSX.Element[];
+  currentStep: number;
+  onClickNext?: React.MouseEventHandler<HTMLButtonElement>;
+  onClickPrevious?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export const ButtonsControl: React.FC<IPropsButtonsControl> = ({
-  children,
+  currentStep,
+  onClickNext,
+  onClickPrevious,
 }) => {
   return (
     <div className="buttons-control">
       <Button
-        onClick={() => {
-          alert("hello");
-        }}
+        onClick={onClickPrevious}
         text="Previous"
+        disabled={currentStep === 0}
       />
-      <Button
-        onClick={() => {
-          alert("hello");
-        }}
-        text="Next"
-      />
-      {children}
+      <Button onClick={onClickNext} text="Next" />
     </div>
   );
 };

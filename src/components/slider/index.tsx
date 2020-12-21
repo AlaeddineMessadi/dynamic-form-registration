@@ -1,45 +1,44 @@
 import React from "react";
 import "./style.scss";
 
-interface IPropsButton {
+interface SliderOption {
+  content: JSX.Element | JSX.Element[];
+  id: string | number;
+}
+interface ISliderButton {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  text?: string;
+  sliders: SliderOption[];
+  name: string;
+  step: number;
 }
 
-export const Slider: React.FC<IPropsButton> = ({
-  text,
+export const Slider: React.FC<ISliderButton> = ({
+  sliders,
+  name,
   onClick: handleOnClickChange,
+  step,
 }) => {
-  const selectId: string = `${text?.toLowerCase()}-select`;
-
   return (
     <div className="carousel-container">
       <div className="carousel my-carousel carousel--translate">
-        <input
-          className="carousel__activator"
-          type="radio"
-          name="carousel"
-          id="F"
-        />
-        <input
-          className="carousel__activator"
-          type="radio"
-          name="carousel"
-          id="G"
-          checked
-        />
+        {sliders.map((elm, index) => (
+          <input
+            key={index}
+            id={index.toString()}
+            className="carousel__activator"
+            type="radio"
+            name={name}
+            checked={step === index}
+            onChange={() => null}
+          />
+        ))}
 
         <div className="carousel__track">
-          <li className="carousel__slide">
-            <h1>F</h1>
-          </li>
-          <li className="carousel__slide">
-            <h1>G</h1>
-          </li>
-        </div>
-        <div className="carousel__indicators">
-          <label className="carousel__indicator" htmlFor="F"></label>
-          <label className="carousel__indicator" htmlFor="G"></label>
+          {sliders.map((elm, index) => (
+            <li key={index} className="carousel__slide">
+              {elm.content}
+            </li>
+          ))}
         </div>
       </div>
     </div>
