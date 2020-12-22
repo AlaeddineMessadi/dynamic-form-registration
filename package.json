@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
@@ -30,12 +26,16 @@
     "json-server": "json-server --watch db.json --port 3001",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress": "cypress open",
+     "cypress:start:app": "BROWSER=none react-scripts -r @cypress/instrument-cra start",
+    "cypress:start:wait": "start-server-and-test cypress:start:app http://localhost:3000",
+    "cypress:open": "npm run cypress:start:wait -- \"cypress open\"",
+    "cypress:run": "npm run cypress:start:wait -- \"cypress run\""
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -51,10 +51,14 @@
     ]
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.8.8",
+    "@cypress/instrument-cra": "^1.4.0",
     "@types/react-redux": "^7.1.12",
     "@types/react-router-dom": "^5.1.6",
     "concurrently": "^5.3.0",
-    "json-server": "^0.16.3"
+    "cypress": "^6.2.0",
+    "json-server": "^0.16.3",
+    "start-server-and-test": "^1.11.6"
   },
   "proxy": "http://localhost:5000"
 }
