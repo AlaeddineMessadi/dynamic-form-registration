@@ -29,3 +29,5 @@ yarn-error.log*
 /cypress
 .nyc_output
 
+
+.vercel
