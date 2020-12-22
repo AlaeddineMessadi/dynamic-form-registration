@@ -1,7 +1,5 @@
 # Dynamic Form Registration HomeHT
 
-# Movingimage24-videos
-
 ## Demo
 
 [DEMO LINK]()
