@@ -1,0 +1,26 @@
+// @import "../App.scss";
+
+@import "../../styles/variables.scss";
+
+.result {
+  padding: $ruler*4 $ruler*5;
+
+  .result-row {
+    flex-flow: row;
+    text-align: left;
+
+    label {
+      display: inline;
+
+      &.name {
+        font-size: 27px;
+        font-weight: bold;
+        margin-right: $ruler*5;
+      }
+
+      &.value {
+        font-size: 20px;
+      }
+    }
+  }
+}

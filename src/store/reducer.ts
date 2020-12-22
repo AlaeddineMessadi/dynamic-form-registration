@@ -11,11 +11,7 @@ export const reducer = (
     case ADD_DATA:
       return {
         ...state,
-        data: {
-          [action.payload.name]: {
-            value: action.payload.value,
-          },
-        },
+        data: action.payload,
       };
     case SET_STEP:
       return {

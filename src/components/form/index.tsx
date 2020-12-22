@@ -1,16 +1,22 @@
-import React from "react";
+import React, { Dispatch } from "react";
 import { Formik, Form as FormikForm } from "formik";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import "./style.scss";
 import { FORM_SCHEMA } from "../../common/form-schema";
-import { ItemOption, KeyType } from "../../common/types";
+import { ItemOption, KeyType, DataField } from "../../common/types";
+import { addDataFieldAction } from "../../store/actions";
 
 interface IPropsForm {
   children: JSX.Element | JSX.Element[];
   className?: string;
 }
 export const Form: React.FC<IPropsForm> = ({ children, className }) => {
+  const dispatch: Dispatch<any> = useDispatch();
+  let history = useHistory();
+
   const [formData, setFormData] = React.useState({});
   const [validationSchema, setValidationSchema] = React.useState({});
 
@@ -58,9 +64,8 @@ export const Form: React.FC<IPropsForm> = ({ children, className }) => {
       initialValues={formData}
       validationSchema={validationSchema}
       onSubmit={(values, actions) => {
-        console.log({ values, actions });
-
-        alert(JSON.stringify(values, null, 2));
+        dispatch(addDataFieldAction(values as DataField[]));
+        history.push("/result");
         actions.setSubmitting(false);
       }}
     >

@@ -1,40 +1,22 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import "./App.scss";
-import { FORM_SCHEMA } from "../common/form-schema";
-import { ButtonsControl, Form, Slider, Stepper } from "../components";
-import { IAppState } from "../common/types";
+import ResultPage from "./result";
+import RegistrationPage from "./registration";
 
-function App() {
-  const step = useSelector((state: IAppState) => state.step);
+interface IPropsApp {}
 
-  const { steps } = FORM_SCHEMA;
-  const lastStepIndex = steps.length - 1;
-
+const App: React.FC<IPropsApp> = () => {
   return (
     <main>
-      <Form className="container">
-        <fieldset className="form-fieldset">
-          <legend>
-            <h1>Registration Form</h1>
-          </legend>
-          <div>
-            <Stepper steps={steps} step={step} />
-          </div>
-          <h2 className="subtitle">Please enter your Name</h2>
-          <div>
-            <Slider name="slider" sliders={steps} step={step} />
-          </div>
-          <ButtonsControl
-            currentStep={step}
-            lastStepIndex={lastStepIndex}
-            steps={steps.map((step) => step.name)}
-          />
-        </fieldset>
-      </Form>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={RegistrationPage} />
+          <Route path="/result" component={ResultPage} />
+        </Switch>
+      </Router>
     </main>
   );
-}
+};
 
 export default App;

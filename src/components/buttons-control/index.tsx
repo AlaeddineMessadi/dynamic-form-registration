@@ -40,8 +40,7 @@ export const ButtonsControl: React.FC<IPropsButtonsControl> = ({
       if (currentStep === lastStepIndex) {
         submitForm();
 
-        console.log(errors);
-        if (errors) {
+        if (Object.keys(errors).length !== 0) {
           const errorStep = steps.indexOf(Object.keys(errors)[0]);
           dispatch(setStepAction(errorStep));
         }

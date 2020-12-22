@@ -6,7 +6,7 @@ export const SET_STEP = "SET_STEP";
 
 interface AddDataAction {
   type: typeof ADD_DATA;
-  payload: DataField;
+  payload: DataField | DataField[];
 }
 interface SetStepAction {
   type: typeof SET_STEP;
