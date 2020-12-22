@@ -25,14 +25,15 @@
     "dev": "concurrently \"yarn start\" \"yarn json-server\"",
     "json-server": "json-server --watch db.json --port 3001",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress": "cypress open",
-     "cypress:start:app": "BROWSER=none react-scripts -r @cypress/instrument-cra start",
+    "cypress:start:app": "BROWSER=none react-scripts -r @cypress/instrument-cra start",
     "cypress:start:wait": "start-server-and-test cypress:start:app http://localhost:3000",
     "cypress:open": "npm run cypress:start:wait -- \"cypress open\"",
     "cypress:run": "npm run cypress:start:wait -- \"cypress run\"",
-    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
+    "deploy": "vercel",
+    "deploy:prod": "vercel --prod"
   },
   "eslintConfig": {
     "extends": [
