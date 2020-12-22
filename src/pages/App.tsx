@@ -1,13 +1,15 @@
 import React from "react";
+import { Dispatch } from "redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+
 import "./App.scss";
-
 import { FORM_SCHEMA } from "../common/form-schema";
-
+import { addDataFieldAction } from "../store/actions";
 import { ButtonsControl, Slider, Stepper } from "../components";
 
 function App() {
   const [step, setStep] = React.useState(0);
-  const [formState, setFormState] = React.useState({});
+  const dispatch: Dispatch<any> = useDispatch();
 
   const { steps } = FORM_SCHEMA;
   const lastStepIndex = steps.length - 1;
@@ -28,6 +30,8 @@ function App() {
       event.preventDefault();
 
       setStep(() => (isLastStep ? 0 : step + 1));
+
+      dispatch(addDataFieldAction({ name: "hello", value: "this is value" }));
     },
     [step, setStep]
   );

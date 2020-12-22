@@ -10,3 +10,12 @@ export interface ItemOption {
   required?: boolean;
   options?: RadioOption[];
 }
+
+export interface DataField {
+  name: string;
+  value: string;
+}
+
+export interface IAppState {
+  data: any;
+}
