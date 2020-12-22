@@ -13,7 +13,8 @@
 
 .progressbar {
   counter-reset: step;
-  margin-left: $ruler*2;
+  margin-left: $ruler;
+  display: flex;
   list-style-type: none;
 
   li {

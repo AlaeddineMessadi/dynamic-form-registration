@@ -32,7 +32,7 @@ export const ButtonsControl: React.FC<IPropsButtonsControl> = ({
     [currentStep, dispatch]
   );
 
-  // on step submit
+  // on next step click
   const onStepSubmit = React.useCallback(
     (event) => {
       event.preventDefault();

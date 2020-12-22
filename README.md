@@ -4,6 +4,13 @@
 
 [DEMO LINK](https://dynamic-form-registration.vercel.app/)
 
+## Description
+
+React.js Dynamic multi-page application form
+
+- Check `src/common/form-schema.ts` to define form fields
+- _Note:_ select type option still not defined yet, only `"text" , "email", "number", "radio"`
+
 ## Screenshot
 
 ![List](./assets/dynamic-form-builder.gif)
