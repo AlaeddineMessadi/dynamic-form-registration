@@ -1,9 +1,8 @@
 import React from "react";
-import { useSelector, shallowEqual } from "react-redux";
 import { RadioButtonsGroup, TextInput } from "..";
 import "./style.scss";
 
-import { IAppState, ItemOption } from "../../common/types";
+import { ItemOption } from "../../common/types";
 
 interface ISliderProps {
   sliders: ItemOption[];
