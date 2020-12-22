@@ -1,5 +1,5 @@
 import { DataField } from "../common/types";
-import { ADD_DATA, SUBMIT, LoadInitialActionTypes } from "./types";
+import { ADD_DATA, SET_STEP, LoadInitialActionTypes } from "./types";
 
 export function addDataFieldAction(data: DataField): LoadInitialActionTypes {
   return {
@@ -8,9 +8,9 @@ export function addDataFieldAction(data: DataField): LoadInitialActionTypes {
   };
 }
 
-export function submitAction(data: boolean): LoadInitialActionTypes {
+export function setStepAction(step: number): LoadInitialActionTypes {
   return {
-    type: SUBMIT,
-    payload: data,
+    type: SET_STEP,
+    payload: step,
   };
 }

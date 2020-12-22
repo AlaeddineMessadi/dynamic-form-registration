@@ -16,6 +16,9 @@ export interface DataField {
   value: string;
 }
 
-// export interface IAppState {
-//   data: any;
-// }
+export type KeyType = { [key: string]: any };
+
+export interface IAppState {
+  data: any;
+  step: number;
+}

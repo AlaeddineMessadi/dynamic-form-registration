@@ -10,7 +10,6 @@ interface IRadioProps {
   label: string;
   name: string;
   options: RadioOption[];
-  error?: boolean;
   required?: boolean;
 }
 
@@ -19,7 +18,6 @@ export const RadioButtonsGroup: React.FC<IRadioProps> = ({
   options,
   name,
   changeHandler,
-  error,
   required,
 }) => {
   return (

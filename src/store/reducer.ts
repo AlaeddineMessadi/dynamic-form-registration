@@ -1,12 +1,7 @@
-import { ADD_DATA, SUBMIT, LoadInitialActionTypes } from "./types";
-// import { IAppState } from "../common/types";
+import { ADD_DATA, SET_STEP, LoadInitialActionTypes } from "./types";
+import { IAppState } from "../common/types";
 
-export interface IAppState {
-  data: any;
-  submit: boolean;
-}
-
-const initialState: IAppState = { data: {}, submit: false };
+const initialState: IAppState = { data: {}, step: 0 };
 
 export const reducer = (
   state = initialState,
@@ -22,10 +17,10 @@ export const reducer = (
           },
         },
       };
-    case SUBMIT:
+    case SET_STEP:
       return {
         ...state,
-        submit: action.payload,
+        step: action.payload,
       };
     default:
       return state;

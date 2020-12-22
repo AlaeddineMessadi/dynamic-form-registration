@@ -4,18 +4,15 @@ import "./style.scss";
 
 interface ITextInputProps {
   changeHandler?: (event: React.ChangeEvent<{ value: unknown }>) => void;
-  value?: string;
   label: string;
   name: string;
   type?: string;
   placeholder?: string;
   error?: boolean;
   required?: boolean;
-  submit?: boolean;
 }
 
 export const TextInput: React.FC<ITextInputProps> = ({
-  value,
   label,
   name,
   placeholder,
@@ -23,7 +20,6 @@ export const TextInput: React.FC<ITextInputProps> = ({
   changeHandler: handleChange,
   error,
   required,
-  submit,
 }) => {
   return (
     <>
