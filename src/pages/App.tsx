@@ -26,7 +26,11 @@ function App() {
           <div>
             <Slider name="slider" sliders={steps} step={step} />
           </div>
-          <ButtonsControl currentStep={step} lastStepIndex={lastStepIndex} />
+          <ButtonsControl
+            currentStep={step}
+            lastStepIndex={lastStepIndex}
+            steps={steps.map((step) => step.name)}
+          />
         </fieldset>
       </Form>
     </main>

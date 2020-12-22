@@ -16,7 +16,6 @@ export const Form: React.FC<IPropsForm> = ({ children, className }) => {
 
   React.useEffect(() => {
     initForm(FORM_SCHEMA.steps);
-    console.log(formData);
   }, []);
 
   const initForm = (formSchema: ItemOption[]) => {
@@ -60,6 +59,7 @@ export const Form: React.FC<IPropsForm> = ({ children, className }) => {
       validationSchema={validationSchema}
       onSubmit={(values, actions) => {
         console.log({ values, actions });
+
         alert(JSON.stringify(values, null, 2));
         actions.setSubmitting(false);
       }}
