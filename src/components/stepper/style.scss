@@ -5,7 +5,7 @@
   position: relative;
 }
 
-.container {
+.progressbar-container {
   width: 100%;
   position: absolute;
   z-index: 1;
@@ -13,6 +13,7 @@
 
 .progressbar {
   counter-reset: step;
+  margin-left: $ruler*2;
   list-style-type: none;
 
   li {

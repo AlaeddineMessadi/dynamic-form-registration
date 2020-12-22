@@ -31,6 +31,7 @@ export const RadioButtonsGroup: React.FC<IRadioProps> = ({
           const optionId = value + index;
           return (
             <RadioButton
+              key={optionId}
               value={value}
               label={labelOpt}
               name={name}

@@ -10,10 +10,10 @@ interface IStepperProps {
 export const Stepper: React.FC<IStepperProps> = ({ steps, step }) => {
   return (
     <div className="progressbar-wrapper">
-      <div className="container">
+      <div className="progressbar-container">
         <ul className="progressbar">
           {steps.map((item, index) => (
-            <li className={index <= step ? "active" : ""}>{`Step  ${
+            <li key={index} className={index <= step ? "active" : ""}>{`Step  ${
               index + 1
             }`}</li>
           ))}

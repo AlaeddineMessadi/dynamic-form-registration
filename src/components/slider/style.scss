@@ -1,5 +1,4 @@
 .carousel {
-  height: 340px;
   width: 400px;
   overflow: hidden;
   text-align: left;
@@ -18,29 +17,16 @@
 .carousel__activator:checked~.carousel__slide {
   text-align: left;
   transition: opacity 0.5s, transform 0.5s;
-  top: 0;
-  left: 0;
-  right: 0;
-  opacity: 1;
   transform: scale(1);
 }
 
 .carousel__track {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 0;
-  margin: 0;
+  display: flex;
   transition: transform 0.5s ease 0s;
 }
 
 .carousel__track .carousel__slide {
   display: block;
-  top: 0;
-  left: 0;
-  right: 0;
   opacity: 1;
 }
 
@@ -48,7 +34,7 @@
 
 .carousel__slide {
   height: 100%;
-  position: absolute;
+  min-width: 400px;
   overflow-y: auto;
   opacity: 0;
 }
@@ -70,13 +56,6 @@
 .carousel__indicator {
   background-color: #fafafa;
 }
-
-
-
-
-
-
-
 
 
 
@@ -110,34 +89,4 @@
 
 .carousel__activator:nth-of-type(8):checked~.carousel__track {
   transform: translateX(-700%);
-}
-
-.carousel__track .carousel__slide:nth-of-type(1) {
-  transform: translateX(0%);
-}
-
-.carousel__track .carousel__slide:nth-of-type(2) {
-  transform: translateX(100%);
-}
-
-.carousel__track .carousel__slide:nth-of-type(3) {
-  transform: translateX(200%);
-}
-
-.carousel__track .carousel__slide:nth-of-type(4) {
-  transform: translateX(300%);
-}
-
-.carousel__track .carousel__slide:nth-of-type(5) {
-  transform: translateX(400%);
-}
-.carousel__track .carousel__slide:nth-of-type(6) {
-  transform: translateX(500%);
-}
-
-.carousel__track .carousel__slide:nth-of-type(7) {
-  transform: translateX(600%);
-}
-.carousel__track .carousel__slide:nth-of-type(8) {
-  transform: translateX(700%);
 }

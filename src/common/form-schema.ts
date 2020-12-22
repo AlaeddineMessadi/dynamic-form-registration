@@ -3,7 +3,7 @@ export const FORM_SCHEMA = {
     {
       name: "name",
       type: "text",
-      label: "Name",
+      label: "Full name",
       required: true,
     },
     {
@@ -15,18 +15,20 @@ export const FORM_SCHEMA = {
     {
       name: "phone",
       type: "text",
-      label: "Phone",
+      label: "Phone Number",
       required: true,
     },
     {
       name: "salary",
       type: "radio",
-      label: "Salary",
+      label: "Salary Indication",
       required: true,
       options: [
-        { label: "1000", value: "10000" },
-        { label: "2000", value: "20000" },
-        { label: "2000", value: "20000" },
+        { label: "0 - 1.000", value: "0 - 1.000" },
+        { label: "1.000 - 2.000", value: "1.000 - 2.000" },
+        { label: "2.000 - 3.000", value: "2.000 - 3.000" },
+        { label: "2.000 - 4.000", value: "3.000 - 4.000" },
+        { label: "Mehr als 4.000", value: "Mehr als 4.000" },
       ],
     },
   ],
