@@ -3,6 +3,7 @@ import "./style.scss";
 
 import { RadioButton } from "../index";
 import { RadioOption } from "../../common/types";
+import { ErrorMessage } from "formik";
 
 interface IRadioProps {
   changeHandler?: React.ChangeEvent;
@@ -40,7 +41,10 @@ export const RadioButtonsGroup: React.FC<IRadioProps> = ({
           );
         })}
       </div>
-      {error && <label className="error">{`${label} is not valid`}</label>}
+      <ErrorMessage
+        name={name}
+        render={(msg) => <label className="error">{msg}</label>}
+      />
     </>
   );
 };

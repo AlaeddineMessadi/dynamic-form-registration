@@ -14,7 +14,7 @@ export const FORM_SCHEMA = {
     },
     {
       name: "phone",
-      type: "text",
+      type: "number",
       label: "Phone Number",
       required: true,
     },

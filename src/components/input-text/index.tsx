@@ -1,3 +1,4 @@
+import { ErrorMessage, Field } from "formik";
 import React from "react";
 import "./style.scss";
 
@@ -10,6 +11,7 @@ interface ITextInputProps {
   placeholder?: string;
   error?: boolean;
   required?: boolean;
+  submit?: boolean;
 }
 
 export const TextInput: React.FC<ITextInputProps> = ({
@@ -21,19 +23,22 @@ export const TextInput: React.FC<ITextInputProps> = ({
   changeHandler: handleChange,
   error,
   required,
+  submit,
 }) => {
   return (
     <>
       <label htmlFor={name}>{`${label} ${required ? " * " : ""}`}</label>
-      <input
+      <Field
         type={type}
         name={name}
-        value={value}
-        onChange={handleChange}
+        id={name}
         placeholder={placeholder || ""}
         className={error ? "has-error" : ""}
       />
-      {error && <label className="error">{`${label} is not valid`}</label>}
+      <ErrorMessage
+        name={name}
+        render={(msg) => <label className="error">{msg}</label>}
+      />
     </>
   );
 };

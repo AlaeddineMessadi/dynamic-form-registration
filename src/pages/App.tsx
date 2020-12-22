@@ -4,7 +4,7 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 
 import "./App.scss";
 import { FORM_SCHEMA } from "../common/form-schema";
-import { addDataFieldAction } from "../store/actions";
+import { addDataFieldAction, submitAction } from "../store/actions";
 import { ButtonsControl, Slider, Stepper } from "../components";
 
 function App() {
@@ -31,14 +31,14 @@ function App() {
 
       setStep(() => (isLastStep ? 0 : step + 1));
 
-      dispatch(addDataFieldAction({ name: "hello", value: "this is value" }));
+      dispatch(submitAction(true));
     },
     [step, setStep]
   );
 
   return (
     <main>
-      <form className="container">
+      <div className="container">
         <fieldset className="form-fieldset">
           <legend>
             <h1>Registration Form</h1>
@@ -56,7 +56,7 @@ function App() {
             onClickPrevious={onPrevClick}
           />
         </fieldset>
-      </form>
+      </div>
     </main>
   );
 }

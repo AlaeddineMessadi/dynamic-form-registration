@@ -1,3 +1,4 @@
+import { Field } from "formik";
 import React from "react";
 import "./style.scss";
 
@@ -16,7 +17,7 @@ export const RadioButton: React.FC<RadioOptionProps> = ({
 }) => {
   return (
     <div className="radio-wrapper">
-      <input
+      <Field
         className="state"
         type="radio"
         name={name}

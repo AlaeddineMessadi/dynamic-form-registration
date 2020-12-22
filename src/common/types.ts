@@ -16,6 +16,6 @@ export interface DataField {
   value: string;
 }
 
-export interface IAppState {
-  data: any;
-}
+// export interface IAppState {
+//   data: any;
+// }

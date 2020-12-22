@@ -5,6 +5,7 @@ import { RadioButton } from "./radio-button";
 import { RadioButtonsGroup } from "./radio-group";
 import { Slider } from "./slider";
 import { Stepper } from "./stepper";
+import { Form } from "./form";
 
 export {
   Button,
@@ -14,4 +15,5 @@ export {
   RadioButtonsGroup,
   Slider,
   Stepper,
+  Form,
 };
