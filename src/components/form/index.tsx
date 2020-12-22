@@ -28,6 +28,7 @@ export const Form: React.FC<IPropsForm> = ({ children, className }) => {
     let _formData: KeyType = {};
     let _validationSchema: KeyType = {};
 
+    // eslint-disable-next-line
     formSchema.map(({ name, type, options = [], required }) => {
       let validation = Yup.string();
       _formData[name] = "";

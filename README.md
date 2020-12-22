@@ -8,7 +8,7 @@
 
 ## Screenshot
 
-![List](./assets/registraion.png)
+![List](./assets/dynamic-form-builder.gif)
 
 ## Prerequisites
 

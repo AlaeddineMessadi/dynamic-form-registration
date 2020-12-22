@@ -12,8 +12,6 @@ interface ISliderProps {
 }
 
 export const Slider: React.FC<ISliderProps> = ({ sliders, name, step }) => {
-  const state = useSelector((state: IAppState) => state, shallowEqual);
-
   const getFormElement = (item: ItemOption) => {
     const { name, type, label, required, options = [] } = item;
 
