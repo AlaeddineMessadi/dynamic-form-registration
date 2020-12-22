@@ -34,7 +34,7 @@ export const RadioButtonsGroup: React.FC<IRadioProps> = ({
               value={value}
               label={labelOpt}
               name={name}
-              optionId={optionId}
+              optionId={optionId.replace(/\s/g, "")}
             />
           );
         })}

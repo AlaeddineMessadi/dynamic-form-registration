@@ -51,13 +51,13 @@ export const Slider: React.FC<ISliderProps> = ({ sliders, name, step }) => {
           />
         ))}
 
-        <div className="carousel__track">
+        <ul className="carousel__track">
           {sliders.map((elm, index) => (
             <li key={index} className="carousel__slide">
               {getFormElement(elm)}
             </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

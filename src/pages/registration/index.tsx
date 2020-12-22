@@ -23,7 +23,7 @@ const RegistrationPage: React.FC<IPropsRegistration> = () => {
         <div>
           <Stepper steps={steps} step={step} />
         </div>
-        <h2 className="subtitle">Please enter your Name</h2>
+        <h2 className="subtitle">Please enter your Information</h2>
         <div>
           <Slider name="slider" sliders={steps} step={step} />
         </div>
