@@ -1,21 +1,23 @@
 import React from "react";
+import { ItemOption } from "../../common/types";
 import "./style.scss";
 
 interface IStepperProps {
-  steps: any;
+  steps: ItemOption[];
   step: number;
 }
 
-export const Stepper: React.FC<IStepperProps> = ({ steps }) => {
+export const Stepper: React.FC<IStepperProps> = ({ steps, step }) => {
   return (
     <div className="progressbar-wrapper">
       <div className="container">
         <ul className="progressbar">
-          <li className="active">Step 1</li>
-          <li className="active">Step 2</li>
-          <li>Step 3</li>
-          <li>Step 4</li>
-          <li>Step 5</li>
+          {steps.map((item, index) => (
+            <li className={index <= step ? "active" : ""}>{`Step  ${
+              index + 1
+            }`}</li>
+          ))}
+          {}
         </ul>
       </div>
     </div>

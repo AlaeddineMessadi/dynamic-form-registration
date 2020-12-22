@@ -100,15 +100,15 @@
   transform: translateX(-400%);
 }
 
-.carousel__activator:nth-of-type(5):checked~.carousel__track {
+.carousel__activator:nth-of-type(6):checked~.carousel__track {
   transform: translateX(-500%);
 }
 
-.carousel__activator:nth-of-type(5):checked~.carousel__track {
+.carousel__activator:nth-of-type(7):checked~.carousel__track {
   transform: translateX(-600%);
 }
 
-.carousel__activator:nth-of-type(5):checked~.carousel__track {
+.carousel__activator:nth-of-type(8):checked~.carousel__track {
   transform: translateX(-700%);
 }
 
@@ -131,13 +131,13 @@
 .carousel__track .carousel__slide:nth-of-type(5) {
   transform: translateX(400%);
 }
-.carousel__track .carousel__slide:nth-of-type(4) {
+.carousel__track .carousel__slide:nth-of-type(6) {
   transform: translateX(500%);
 }
 
-.carousel__track .carousel__slide:nth-of-type(5) {
+.carousel__track .carousel__slide:nth-of-type(7) {
   transform: translateX(600%);
 }
-.carousel__track .carousel__slide:nth-of-type(5) {
+.carousel__track .carousel__slide:nth-of-type(8) {
   transform: translateX(700%);
 }
