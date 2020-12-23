@@ -56,7 +56,6 @@ Run `yarn deploy` OR `yarn deploy:prod` for production
 
 - [React.js](https://reactjs.org/) - JavaScript library for building user interfaces
 - [Redux](https://redux.js.org/) - State Management
-- [Material-UI](https://material-ui.com/) - End framework
 - [Cypress](https://www.cypress.io/) - End to End testing Framework
 - [typescript](https://www.typescriptlang.org/) - Typescript
 - [vercel](https://vercel.com/) - Deployment server
