@@ -2,8 +2,8 @@ import React from "react";
 import { RadioButtonsGroup, TextInput } from "..";
 import "./style.scss";
 
-import { ItemOption } from "../../common/types";
-
+import { IAppState, ItemOption } from "../../common/types";
+import { useSelector } from "react-redux";
 interface ISliderProps {
   sliders: ItemOption[];
   name: string;
@@ -11,6 +11,8 @@ interface ISliderProps {
 }
 
 export const Slider: React.FC<ISliderProps> = ({ sliders, name, step }) => {
+  const containerWidth = useSelector((state: IAppState) => state.width);
+
   const getFormElement = (item: ItemOption) => {
     const { name, type, label, required, options = [] } = item;
 
@@ -33,9 +35,17 @@ export const Slider: React.FC<ISliderProps> = ({ sliders, name, step }) => {
     return <p>Missing Form Element type</p>;
   };
 
+  // todo width
+
   return (
-    <div className="carousel-container">
-      <div className="carousel my-carousel carousel--translate">
+    <div
+      className="carousel-container"
+      style={{ width: `${containerWidth - 100}px` }}
+    >
+      <div
+        className="carousel my-carousel carousel--translate"
+        style={{ width: `${containerWidth - 120}px` }}
+      >
         {sliders.map((elm, index) => (
           <input
             key={index}
@@ -48,9 +58,16 @@ export const Slider: React.FC<ISliderProps> = ({ sliders, name, step }) => {
           />
         ))}
 
-        <ul className="carousel__track">
+        <ul
+          className="carousel__track"
+          style={{ width: `${containerWidth - 120}px` }}
+        >
           {sliders.map((elm, index) => (
-            <li key={index} className="carousel__slide">
+            <li
+              key={index}
+              className="carousel__slide"
+              style={{ minWidth: `${containerWidth - 120}px` }}
+            >
               {getFormElement(elm)}
             </li>
           ))}

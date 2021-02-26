@@ -5,6 +5,7 @@ import "./style.scss";
 import { FORM_SCHEMA } from "../../common/form-schema";
 import { ButtonsControl, Form, Slider, Stepper } from "../../components";
 import { IAppState } from "../../common/types";
+import { MAX_WIDTH } from "../../common/constants";
 
 interface IPropsRegistration {}
 
@@ -15,7 +16,7 @@ const RegistrationPage: React.FC<IPropsRegistration> = () => {
   const lastStepIndex = steps.length - 1;
 
   return (
-    <Form className="container">
+    <Form className="container" style={{ maxWidth: MAX_WIDTH }}>
       <fieldset className="form-fieldset">
         <legend>
           <h1>Registration Form</h1>

@@ -21,4 +21,5 @@ export type KeyType = { [key: string]: any };
 export interface IAppState {
   data: any;
   step: number;
+  width: number;
 }

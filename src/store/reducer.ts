@@ -1,7 +1,7 @@
-import { ADD_DATA, SET_STEP, LoadInitialActionTypes } from "./types";
+import { ADD_DATA, SET_STEP, LoadInitialActionTypes, SET_WIDTH } from "./types";
 import { IAppState } from "../common/types";
 
-const initialState: IAppState = { data: {}, step: 0 };
+const initialState: IAppState = { data: {}, step: 0, width: 0 };
 
 export const reducer = (
   state = initialState,
@@ -17,6 +17,11 @@ export const reducer = (
       return {
         ...state,
         step: action.payload,
+      };
+    case SET_WIDTH:
+      return {
+        ...state,
+        width: action.payload,
       };
     default:
       return state;
