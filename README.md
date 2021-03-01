@@ -1,4 +1,4 @@
-# Dynamic Form Registration HomeHT
+# Dynamic Form Registration
 
 ## Demo
 
@@ -51,6 +51,10 @@ Run `yarn deploy` OR `yarn deploy:prod` for production
 >
 > - more tests.
 > - Style enhancements.
+
+## Contribution
+All PR's are welcome :)
+
 
 ## Built With
 
